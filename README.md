@@ -315,21 +315,6 @@ Zeno UI works in all modern browsers that support:
 
 For detailed component documentation and examples, visit the [demo page](https://goyatg.github.io/zeno/) or check the `index.html` file in this repository.
 
-## Development
-
-If you want to build from source:
-
-```bash
-# Install dependencies
-npm install
-
-# Build optimized files
-npm run build
-
-# Create a release
-npm run release
-```
-
 ## License
 
 Free to use in personal and commercial projects.
@@ -337,6 +322,83 @@ Free to use in personal and commercial projects.
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## For Developers
+
+> This section is for developers working on the Zeno UI project itself, not for end users.
+
+### Setup
+
+1. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+2. **Build optimized files**:
+
+   ```bash
+   npm run build
+   ```
+
+   This creates the `dist/` folder with minified files:
+
+   - `script.min.js` - Minified JavaScript
+   - `styles.min.css` - Minified and auto-prefixed CSS
+   - `version.json` - Version information
+
+3. **Test the build**:
+   Verify the `dist/` folder contains the expected files.
+
+### Creating a Release
+
+1. **Check version sync (optional)**:
+
+   ```bash
+   npm run release:dry-run
+   ```
+
+   This shows if everything is in sync without making changes.
+
+2. **Create a release**:
+
+   ```bash
+   # This will build, sync versions, and create the git tag
+   npm run release
+   ```
+
+3. **Commit and push**:
+   ```bash
+   git add .
+   git commit -m "Release vX.Y.Z"
+   git push
+   git push origin vX.Y.Z
+   ```
+
+The `release` script ensures:
+
+- package.json version matches version.json
+- Git tag matches package.json version
+- No duplicate tags are created
+
+### Build System
+
+The project includes:
+
+- ✅ **Build Script** (`build.js`) - Minifies JS/CSS, adds auto-prefixing
+- ✅ **Release Script** (`release.js`) - Validates versions and creates git tags
+- ✅ **Version Management** - Uses package.json version
+- ✅ **Optimizations** - Minification, auto-prefixing, compression
+
+### Dependencies
+
+- `postcss` - CSS processing
+- `autoprefixer` - Automatic vendor prefixes
+- `terser` - JavaScript minification
+- `clean-css` - CSS minification
+- `gzip-size` - Compression stats
 
 ---
 
