@@ -21,14 +21,14 @@ Include the CSS and JavaScript files in your HTML:
 <!-- CSS -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/goyatg/zeno@v1.0.0/dist/styles.min.css"
+  href="https://cdn.jsdelivr.net/gh/goyatg/zeno@valpha/dist/styles.min.css"
 />
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/goyatg/zeno@v1.0.0/dist/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/goyatg/zeno@valpha/dist/script.min.js"></script>
 ```
 
-**Note:** Replace `v1.0.0` with the version you want to use. For the latest version, you can use:
+**Note:** Replace `valpha` with the version you want to use. For the latest version, you can use:
 
 - `@latest` - Latest release
 - `@master` - Latest commit from master branch
@@ -56,14 +56,14 @@ Include the CSS and JavaScript files in your HTML:
     <title>My App</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/goyatg/zeno@v1.0.0/dist/styles.min.css"
+      href="https://cdn.jsdelivr.net/gh/goyatg/zeno@valpha/dist/styles.min.css"
     />
   </head>
   <body>
     <!-- Your content here -->
     <button class="btn btn-primary">Click Me</button>
 
-    <script src="https://cdn.jsdelivr.net/gh/goyatg/zeno@v1.0.0/dist/script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/goyatg/zeno@valpha/dist/script.min.js"></script>
   </body>
 </html>
 ```
