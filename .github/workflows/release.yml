@@ -1,0 +1,75 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on tags starting with 'v'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for tags
+      
+      - name: Extract version from tag
+        id: tag_version
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "version=${TAG_NAME#v}" >> $GITHUB_OUTPUT
+          echo "tag=${TAG_NAME}" >> $GITHUB_OUTPUT
+      
+      - name: Get release notes
+        id: release_notes
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          
+          # Get the previous tag
+          PREVIOUS_TAG=$(git tag --sort=-version:refname | grep -A1 "^${TAG_NAME}$" | tail -1 || echo "")
+          
+          if [ -z "$PREVIOUS_TAG" ]; then
+            # First release - get all commits up to this tag
+            NOTES=$(git log --pretty=format:"- %s (%h)" ${TAG_NAME})
+          else
+            # Get commits since previous tag
+            NOTES=$(git log --pretty=format:"- %s (%h)" ${PREVIOUS_TAG}..${TAG_NAME})
+          fi
+          
+          # If no notes, use a default message
+          if [ -z "$NOTES" ]; then
+            NOTES="- Initial release"
+          fi
+          
+          # Use multiline output
+          {
+            echo "notes<<EOF"
+            echo "$NOTES"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag_version.outputs.tag }}
+          name: Release ${{ steps.tag_version.outputs.tag }}
+          body: |
+            ## Changes in ${{ steps.tag_version.outputs.tag }}
+            
+            ${{ steps.release_notes.outputs.notes }}
+            
+            ## Installation
+            
+            ```html
+            <!-- CSS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ steps.tag_version.outputs.tag }}/dist/styles.min.css" />
+            
+            <!-- JavaScript -->
+            <script src="https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ steps.tag_version.outputs.tag }}/dist/script.min.js"></script>
+            ```
+          draft: false
+          prerelease: false
