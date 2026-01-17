@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "buildDate": "2026-01-17T13:49:12.235Z",
+  "files": [
+    {
+      "input": "script.js",
+      "output": "dist/script.min.js",
+      "type": "js"
+    },
+    {
+      "input": "styles.css",
+      "output": "dist/styles.min.css",
+      "type": "css"
+    }
+  ]
+}
