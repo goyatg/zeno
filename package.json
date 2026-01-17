@@ -1,6 +1,6 @@
 {
   "name": "zeno",
-  "version": "1.0.0",
+  "version": "alpha",
   "description": "Optimized CSS and JS files for CDN distribution",
   "main": "dist/script.min.js",
   "style": "dist/styles.min.css",
