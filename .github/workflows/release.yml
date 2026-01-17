@@ -21,8 +21,15 @@ jobs:
         id: tag_version
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
-          echo "version=${TAG_NAME#v}" >> $GITHUB_OUTPUT
+          VERSION=${TAG_NAME#v}
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "tag=${TAG_NAME}" >> $GITHUB_OUTPUT
+          # Check if this is a prerelease (alpha, beta, rc, etc.)
+          if [[ "${VERSION}" =~ (alpha|beta|rc|pre) ]]; then
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+          fi
       
       - name: Get release notes
         id: release_notes
@@ -72,4 +79,4 @@ jobs:
             <script src="https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ steps.tag_version.outputs.tag }}/dist/script.min.js"></script>
             ```
           draft: false
-          prerelease: false
+          prerelease: ${{ steps.tag_version.outputs.prerelease }}
