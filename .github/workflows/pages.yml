@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
   contents: read
@@ -21,45 +21,45 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-      
+          node-version: "20"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build project
         run: npm run build
-      
+
       - name: Prepare GitHub Pages deployment
         run: |
           # Create a directory for GitHub Pages
           mkdir -p gh-pages
-          
+
           # Copy dist files
           cp -r dist/* gh-pages/
-          
+
           # Copy and update index.html to use minified files
           sed 's|href="styles.css"|href="styles.min.css"|g; s|src="script.js"|src="script.min.js"|g' index.html > gh-pages/index.html
-          
+
           # Create .nojekyll file to disable Jekyll processing
           touch gh-pages/.nojekyll
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './gh-pages'
-      
+          path: "./gh-pages"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
