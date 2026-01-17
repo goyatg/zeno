@@ -15,11 +15,17 @@ const colors = {
 
 function exec(command, options = {}) {
   try {
-    return execSync(command, { 
+    const result = execSync(command, { 
       encoding: 'utf8', 
       stdio: options.silent ? 'pipe' : 'inherit',
       ...options 
-    }).trim();
+    });
+    // Handle null or undefined results
+    if (result === null || result === undefined) {
+      return '';
+    }
+    // Only call trim if result is a string
+    return typeof result === 'string' ? result.trim() : String(result).trim();
   } catch (error) {
     if (!options.silent) {
       console.error(`${colors.red}Error:${colors.reset}`, error.message);
@@ -163,10 +169,22 @@ async function main() {
     }
   }
 
+  // Get repository info for CDN URLs
+  let repoInfo = 'goyatg/zeno'; // Default fallback
+  try {
+    const remoteUrl = exec('git remote get-url origin', { silent: true });
+    const match = remoteUrl.match(/(?:github\.com[:/]|@github\.com[:/])([^/]+)\/([^/]+?)(?:\.git)?$/);
+    if (match) {
+      repoInfo = `${match[1]}/${match[2]}`;
+    }
+  } catch (error) {
+    // Use default if git command fails
+  }
+
   console.log(`\n${colors.green}✓ Release preparation complete!${colors.reset}`);
   console.log(`\n${colors.cyan}CDN URLs (after pushing tag):${colors.reset}`);
-  console.log(`  CSS: https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@v${packageVersion}/dist/styles.min.css`);
-  console.log(`  JS:  https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@v${packageVersion}/dist/script.min.js`);
+  console.log(`  CSS: https://cdn.jsdelivr.net/gh/${repoInfo}@v${packageVersion}/dist/styles.min.css`);
+  console.log(`  JS:  https://cdn.jsdelivr.net/gh/${repoInfo}@v${packageVersion}/dist/script.min.js`);
 }
 
 main().catch(error => {
