@@ -1453,8 +1453,53 @@ body {
 }
 
 /* ================================================
-   FAB (Floating Action Button)
-   ================================================ */
+  SIDEBAR TOGGLE (Fixed Position)
+  ================================================ */
+
+.sidebar-toggle-fixed {
+  position: fixed;
+  bottom: calc(60px + 44px + var(--space-lg) + var(--space-md));
+  right: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background: var(--secondary);
+  color: var(--text-inverse);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  z-index: 50;
+}
+
+.sidebar-toggle-fixed:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+  background: var(--secondary-light);
+}
+
+.sidebar-toggle-fixed:active {
+  transform: scale(0.95);
+}
+
+.sidebar-toggle-fixed svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .sidebar-toggle-fixed {
+    bottom: calc(48px + 44px + var(--space-xl) + var(--space-md) + var(--space-md));
+    right: var(--space-xl);
+  }
+}
+
+/* ================================================
+  FAB (Floating Action Button)
+  ================================================ */
 
 .fab {
   position: fixed;
@@ -1481,7 +1526,7 @@ body {
 
 @media (min-width: 768px) {
   .fab {
-    bottom: var(--space-xl);
+    bottom: calc(48px + var(--space-xl) + var(--space-md));
     right: var(--space-xl);
   }
 }
