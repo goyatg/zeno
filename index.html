@@ -24,30 +24,6 @@
         </button>
       </div>
       <div class="sidebar-content">
-        <!-- Introduction -->
-        <div class="sidebar-section">
-          <div class="sidebar-section-header">
-            <span class="sidebar-section-title">Introduction</span>
-            <button class="sidebar-section-toggle">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-          </div>
-          <div class="sidebar-section-content">
-            <ul class="sidebar-nav">
-              <li class="sidebar-nav-item">
-                <a href="#philosophy" class="sidebar-nav-link">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                  </svg>
-                  Philosophy
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <!-- Layout & Structure -->
         <div class="sidebar-section">
           <div class="sidebar-section-header">
@@ -496,64 +472,8 @@
       <!-- Hero Section -->
       <header style="margin-bottom: var(--space-xl);">
         <h1 class="title">Zeno UI</h1>
-        <p class="subtitle">A beautiful, responsive UI library built with vanilla CSS, HTML, and JavaScript. Works great on mobile and desktop.</p>
+        <p class="subtitle">A simple, opinionated UI library that prioritizes simplicity and works out of the box.</p>
       </header>
-
-      <!-- ============================== -->
-      <!-- PHILOSOPHY SECTION -->
-      <!-- ============================== -->
-      <h2 class="section-title" id="philosophy">Philosophy</h2>
-      
-      <p class="subtitle">Why Zeno UI exists and the principles that guide its design.</p>
-
-      <div class="content" style="margin: 0 0 var(--space-xl) 0; max-width: 800px;">
-        <p>
-          In a world of complex build tools, heavy frameworks, and endless configuration, Zeno UI exists to bring back simplicity. We believe that building beautiful interfaces shouldn't require learning a new framework, setting up a build pipeline, or wrestling with dependencies. Sometimes, you just need components that work—right now, right out of the box.
-        </p>
-
-        <div style="display: grid; gap: var(--space-lg); margin-bottom: var(--space-lg);">
-          <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
-            <h3 style="margin: 0 0 var(--space-sm) 0; font-size: 1rem; font-weight: 600; color: var(--primary);">Simplicity Over Complexity</h3>
-            <p style="margin: 0; color: var(--text-secondary); line-height: 1.6;">
-              No build tools. No dependencies. No configuration files. Just pure HTML, CSS, and JavaScript that you can copy, paste, and customize. We've made the hard decisions so you don't have to.
-            </p>
-          </div>
-          
-          <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
-            <h3 style="margin: 0 0 var(--space-sm) 0; font-size: 1rem; font-weight: 600; color: var(--primary);">Opinionated by Design</h3>
-            <p style="margin: 0; color: var(--text-secondary); line-height: 1.6;">
-              We provide sensible defaults—from our warm earth-tone color palette to our minimal border radius choices. Our layout system eliminates unnecessary wrappers (no row divs needed!). These opinions aren't arbitrary; they're the result of careful consideration about what works best in practice.
-            </p>
-          </div>
-          
-          <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
-            <h3 style="margin: 0 0 var(--space-sm) 0; font-size: 1rem; font-weight: 600; color: var(--primary);">Mobile-First, Always</h3>
-            <p style="margin: 0; color: var(--text-secondary); line-height: 1.6;">
-              Every component is built with mobile in mind first, then enhanced for larger screens. Responsive design isn't an afterthought—it's woven into the fabric of every component, ensuring your interfaces work beautifully on any device.
-            </p>
-          </div>
-          
-          <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
-            <h3 style="margin: 0 0 var(--space-sm) 0; font-size: 1rem; font-weight: 600; color: var(--primary);">Progressive Enhancement</h3>
-            <p style="margin: 0; color: var(--text-secondary); line-height: 1.6;">
-              Zeno UI embraces the web platform as it is. We use modern CSS features like custom properties and the `:has()` selector, but we don't require JavaScript for basic functionality. Components degrade gracefully and enhance progressively.
-            </p>
-          </div>
-          
-          <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">
-            <h3 style="margin: 0 0 var(--space-sm) 0; font-size: 1rem; font-weight: 600; color: var(--primary);">Design System Thinking</h3>
-            <p style="margin: 0; color: var(--text-secondary); line-height: 1.6;">
-              Every spacing value, color, and transition is defined as a CSS custom property. This creates a cohesive design system that's easy to customize and maintain. Change a variable once, and it updates everywhere—the way design systems should work.
-            </p>
-          </div>
-        </div>
-
-        <div style="padding: var(--space-lg); background: var(--surface); border-radius: var(--radius-sm); border: 1px solid var(--bg-tertiary);">
-          <p style="margin: 0; font-style: italic; color: var(--text-secondary); line-height: 1.7;">
-            Zeno UI is for developers who value their time, appreciate thoughtful defaults, and want to build great interfaces without the overhead. It's not trying to be everything to everyone—it's trying to be exactly what you need, when you need it.
-          </p>
-        </div>
-      </div>
 
       <!-- Search Bar -->
       <div class="searchbar" style="max-width: 500px;">
