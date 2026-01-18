@@ -1729,6 +1729,8 @@ body {
 .textarea {
   min-height: 80px;
   resize: vertical;
+  padding: var(--control-padding-x) var(--control-padding-x);
+  height: auto;
 }
 
 /* ================================================
