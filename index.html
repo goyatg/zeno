@@ -562,7 +562,7 @@
 
       <!-- ============================== --><h2 class="section-title" id="layout">Layout System</h2>
       
-      <p class="subtitle">Simple, responsive layout system with container, columns, and spacing utilities. No row wrapper needed!</p>
+      <p class="subtitle">Simple, opinionated layout system. Just add a class and everything inside adjusts beautifully!</p>
 
       <!-- Container Examples -->
       <h3 class="section-title" style="margin-top: var(--space-lg);">Container</h3>
@@ -570,103 +570,83 @@
         <p style="margin: 0;">This is a container - it centers content with max-width and responsive padding.</p>
       </div>
 
-      <!-- Basic Two Column Layout -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Basic Columns (No Row Needed!)</h3>
-      <div class="container">
-        <div class="col-6" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-6</strong> - Takes 50% width
-        </div>
-        <div class="col-6" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-6</strong> - Takes 50% width
-        </div>
-      </div>
-
-      <!-- Three Column Layout -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Three Columns</h3>
-      <div class="container">
-        <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-4</strong> - 33.33% width
-        </div>
-        <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-4</strong> - 33.33% width
-        </div>
-        <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-4</strong> - 33.33% width
-        </div>
-      </div>
-
-      <!-- Flexible Column -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Flexible Columns</h3>
-      <div class="container">
-        <div class="col" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col</strong> - Flexible, takes available space
-        </div>
-        <div class="col-3" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-3</strong> - Fixed 25% width
-        </div>
-      </div>
-
-      <!-- Responsive Columns -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Responsive Columns</h3>
+      <!-- Cols - Flexible columns -->
+      <h3 class="section-title" style="margin-top: var(--space-lg);">Cols - Flexible columns</h3>
       <p style="margin-bottom: var(--space-md); color: var(--text-secondary); font-size: 0.875rem;">
-        Stack on mobile, 2 columns on tablet, 3 columns on desktop
+        Items have a base size of 16rem, grow to fill space, and wrap naturally. Perfect for columns!
+      </p>
+      
+      <div class="container">
+        <div class="cols">
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Column 1
+          </div>
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Column 2
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: var(--space-md);">
+        <div class="cols">
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Column 1
+          </div>
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Column 2
+          </div>
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Column 3
+          </div>
+        </div>
+      </div>
+
+      <!-- Group - Natural size grouping -->
+      <h3 class="section-title" style="margin-top: var(--space-lg);">Group - Natural size grouping</h3>
+      <p style="margin-bottom: var(--space-md); color: var(--text-secondary); font-size: 0.875rem;">
+        Items use their natural width and wrap naturally. Perfect for tags, buttons, and grouped content!
+      </p>
+      
+      <!-- Tags example -->
+      <div class="container">
+        <div class="group">
+          <span class="badge">Tag 1</span>
+          <span class="badge">Longer Tag</span>
+          <span class="badge">Short</span>
+          <span class="badge">Another Tag</span>
+          <span class="badge">Tag</span>
+        </div>
+      </div>
+
+      <!-- Buttons example -->
+      <div class="container" style="margin-top: var(--space-md);">
+        <div class="group">
+          <button class="btn btn-primary">Button 1</button>
+          <button class="btn btn-secondary">Button 2</button>
+          <button class="btn btn-accent">Button 3</button>
+        </div>
+      </div>
+
+      <!-- Stack - Vertical stacking -->
+      <h3 class="section-title" style="margin-top: var(--space-lg);">Stack - Vertical stacking</h3>
+      <p style="margin-bottom: var(--space-md); color: var(--text-secondary); font-size: 0.875rem;">
+        Perfect for forms, cards, or any vertical content flow.
       </p>
       <div class="container">
-        <div class="col-12 col-sm-6 col-md-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-12 col-sm-6 col-md-4</strong>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-12 col-sm-6 col-md-4</strong>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>col-12 col-sm-6 col-md-4</strong>
-        </div>
-      </div>
-
-      <!-- Spacing Utilities -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Spacing Utilities</h3>
-      <div class="container">
-        <div class="col-6 p-md" style="background: var(--bg-secondary); border-radius: var(--radius-sm);">
-          <strong>p-md</strong> - Padding medium
-        </div>
-        <div class="col-6 mt-lg" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-          <strong>mt-lg</strong> - Margin top large
-        </div>
-      </div>
-
-      <!-- Optional Row Usage -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Optional Row (for explicit control)</h3>
-      <div class="container">
-        <div class="row">
-          <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-            Using <strong>row</strong> wrapper
+        <div class="stack" style="max-width: 400px;">
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Item 1
           </div>
-          <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-            Using <strong>row</strong> wrapper
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Item 2
           </div>
-          <div class="col-4" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-            Using <strong>row</strong> wrapper
+          <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
+            Item 3
           </div>
         </div>
       </div>
 
-      <!-- Container Sizes -->
-      <h3 class="section-title" style="margin-top: var(--space-lg);">Container Sizes</h3>
-      <div class="container-sm" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-sm);">
-        <strong>container-sm</strong> - Max width 640px
-      </div>
-      <div class="container-md" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-sm);">
-        <strong>container-md</strong> - Max width 768px
-      </div>
-      <div class="container-lg" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-sm);">
-        <strong>container-lg</strong> - Max width 1024px
-      </div>
-      <div class="container" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-sm);">
-        <strong>container</strong> - Max width 1200px (default)
-      </div>
-      <div class="container-xl" style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm);">
-        <strong>container-xl</strong> - Max width 1280px
-      </div>
+
 
       <!-- ============================== -->
       <!-- BUTTONS SECTION -->
