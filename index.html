@@ -397,6 +397,14 @@
                 </a>
               </li>
               <li class="sidebar-nav-item">
+                <a href="#toast" class="sidebar-nav-link">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                  </svg>
+                  Toast Notifications
+                </a>
+              </li>
+              <li class="sidebar-nav-item">
                 <a href="#drawer" class="sidebar-nav-link">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
@@ -2453,27 +2461,27 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div class="menu-dropdown">
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Edit clicked')">
+          <div class="menu menu-dropdown">
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Edit clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
               </svg>
               Edit
             </button>
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Duplicate clicked')">
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Duplicate clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
               </svg>
               Duplicate
             </button>
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Share clicked')">
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.info('Share clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
               </svg>
               Share
             </button>
-            <div class="menu-dropdown-divider"></div>
-            <button class="menu-dropdown-item menu-dropdown-item-danger" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.error('Item deleted')">
+            <div class="menu-divider"></div>
+            <button class="menu-item menu-item-danger" onclick="ZenoMenuDropdown.close('#menuDropdown1'); ZenoToast.error('Item deleted')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
               </svg>
@@ -2489,22 +2497,22 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div class="menu-dropdown">
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('View clicked')">
+          <div class="menu menu-dropdown">
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('View clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
               </svg>
               View
             </button>
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('Download clicked')">
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('Download clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               Download
             </button>
-            <div class="menu-dropdown-divider"></div>
-            <button class="menu-dropdown-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('Settings clicked')">
+            <div class="menu-divider"></div>
+            <button class="menu-item" onclick="ZenoMenuDropdown.close('#menuDropdown2'); ZenoToast.info('Settings clicked')">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -2523,10 +2531,13 @@
       <div class="btn-group">
         <button class="btn btn-primary" onclick="ZenoModal.open('demoModal')">Open Modal</button>
         <button class="btn btn-secondary" onclick="ZenoActionSheet.open('demoSheet')">Action Sheet</button>
+        <button class="btn btn-accent" onclick="ZenoFullPageSheet.open('demoFullPageSheet')">Full Page Sheet</button>
         <button class="btn btn-outline" onclick="ZenoSidebar.open()">Open Sidebar</button>
       </div>
+
+      <h2 class="section-title" id="toast">Toast Notifications</h2>
       
-      <div class="btn-group mt-md">
+      <div class="btn-group">
         <button class="btn btn-ghost" onclick="ZenoToast.success('Your file has been uploaded!', 'Upload Complete')">Success Toast</button>
         <button class="btn btn-ghost" onclick="ZenoToast.error('Please check your connection.', 'Network Error')">Error Toast</button>
         <button class="btn btn-ghost" onclick="ZenoToast.warning('Low battery detected.')">Warning Toast</button>
@@ -3302,27 +3313,27 @@ await ZenoScreenshot.copyToClipboard(document.getElementById('my-element'));</co
     </div>
 
     <!-- Menu Popover -->
-    <div class="popover popover-menu" id="popoverMenu">
-      <button class="popover-menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Edit clicked')">
+    <div class="popover menu popover-menu" id="popoverMenu">
+      <button class="menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Edit clicked')">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
         </svg>
         Edit
       </button>
-      <button class="popover-menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Duplicate clicked')">
+      <button class="menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Duplicate clicked')">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
         </svg>
         Duplicate
       </button>
-      <button class="popover-menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Share clicked')">
+      <button class="menu-item" onclick="ZenoPopover.close(); ZenoToast.info('Share clicked')">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
         </svg>
         Share
       </button>
-      <div class="popover-menu-divider"></div>
-      <button class="popover-menu-item popover-menu-item-danger" onclick="ZenoPopover.close(); ZenoToast.error('Item deleted')">
+      <div class="menu-divider"></div>
+      <button class="menu-item menu-item-danger" onclick="ZenoPopover.close(); ZenoToast.error('Item deleted')">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
         </svg>
@@ -3563,6 +3574,73 @@ await ZenoScreenshot.copyToClipboard(document.getElementById('my-element'));</co
         Delete
       </button>
       <button class="action-sheet-btn action-sheet-cancel" onclick="ZenoActionSheet.close('demoSheet')">Cancel</button>
+    </div>
+
+    <!-- Full Page Sheet -->
+    <div class="full-page-sheet-overlay" id="demoFullPageSheet-overlay"></div>
+    <div class="full-page-sheet" id="demoFullPageSheet">
+      <div class="full-page-sheet-handle"></div>
+      <div class="full-page-sheet-header">
+        <h3 class="full-page-sheet-title">Full Page Sheet</h3>
+        <button class="full-page-sheet-close" onclick="ZenoFullPageSheet.close('demoFullPageSheet')">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="full-page-sheet-body">
+        <p>This is a full-page sheet that covers the entire viewport. It's perfect for displaying detailed content, forms, or immersive experiences.</p>
+        
+        <div class="input-group mt-md">
+          <label class="label">Title</label>
+          <input type="text" class="input" placeholder="Enter a title">
+        </div>
+        
+        <div class="input-group mt-md">
+          <label class="label">Description</label>
+          <textarea class="input textarea" placeholder="Enter a description" rows="4"></textarea>
+        </div>
+        
+        <div class="input-group mt-md">
+          <label class="label">Category</label>
+          <select class="input">
+            <option>Select a category</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        
+        <div class="form-row mt-md">
+          <div class="input-group">
+            <label class="label">Date</label>
+            <input type="date" class="input">
+          </div>
+          <div class="input-group">
+            <label class="label">Time</label>
+            <input type="time" class="input">
+          </div>
+        </div>
+        
+        <div class="mt-md">
+          <label class="label">Tags</label>
+          <div class="chips-container">
+            <span class="chip">Design</span>
+            <span class="chip">Development</span>
+            <span class="chip">UI/UX</span>
+          </div>
+        </div>
+        
+        <div class="mt-md">
+          <h4>Additional Information</h4>
+          <p class="text-secondary">You can add any content here. The sheet body is scrollable, so you can include as much content as needed.</p>
+          <p class="text-secondary mt-sm">The full-page sheet provides a focused, immersive experience for complex interactions or detailed content.</p>
+        </div>
+      </div>
+      <div class="full-page-sheet-footer">
+        <button class="btn btn-ghost" onclick="ZenoFullPageSheet.close('demoFullPageSheet')">Cancel</button>
+        <button class="btn btn-primary" onclick="ZenoFullPageSheet.close('demoFullPageSheet'); ZenoToast.success('Full page sheet submitted!')">Save</button>
+      </div>
     </div>
 
   </div>

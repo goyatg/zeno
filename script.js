@@ -132,6 +132,50 @@
   };
 
   // ================================================
+  // FULL PAGE SHEET
+  // ================================================
+
+  const ZenoFullPageSheet = {
+    open(sheetId) {
+      const overlay = $(`#${sheetId}-overlay`);
+      const sheet = $(`#${sheetId}`);
+
+      if (overlay) overlay.classList.add("active");
+      if (sheet) sheet.classList.add("active");
+      document.body.style.overflow = "hidden";
+
+      // Close on overlay click
+      if (overlay) {
+        overlay.addEventListener(
+          "click",
+          () => {
+            this.close(sheetId);
+          },
+          { once: true }
+        );
+      }
+
+      // Close on escape key
+      const escHandler = (e) => {
+        if (e.key === "Escape") {
+          this.close(sheetId);
+          document.removeEventListener("keydown", escHandler);
+        }
+      };
+      document.addEventListener("keydown", escHandler);
+    },
+
+    close(sheetId) {
+      const overlay = $(`#${sheetId}-overlay`);
+      const sheet = $(`#${sheetId}`);
+
+      if (overlay) overlay.classList.remove("active");
+      if (sheet) sheet.classList.remove("active");
+      document.body.style.overflow = "";
+    },
+  };
+
+  // ================================================
   // SIDEBAR
   // ================================================
 
@@ -324,7 +368,7 @@
         });
 
         // Handle menu item clicks
-        $$(".menu-dropdown-item", dropdown).forEach((item) => {
+        $$(".menu-item", dropdown).forEach((item) => {
           if (!item.disabled) {
             item.addEventListener("click", (e) => {
               e.stopPropagation();
@@ -4599,6 +4643,7 @@
   window.ZenoUI = ZenoUI;
   window.ZenoModal = ZenoModal;
   window.ZenoActionSheet = ZenoActionSheet;
+  window.ZenoFullPageSheet = ZenoFullPageSheet;
   window.ZenoSidebar = ZenoSidebar;
   window.ZenoMenuDropdown = ZenoMenuDropdown;
   window.ZenoToast = ZenoToast;
