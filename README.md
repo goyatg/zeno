@@ -138,7 +138,6 @@ Include the CSS and JavaScript files in your HTML:
 - **Back to Top** - Scroll to top button
 - **Copy to Clipboard** - Copy functionality
 - **Share** - Social sharing component
-- **Screenshot** - Capture screen functionality
 
 ## Usage Examples
 
